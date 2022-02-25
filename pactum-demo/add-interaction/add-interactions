@@ -1,0 +1,40 @@
+const { mock, handler } = require('pactum');
+
+handler.addInteractionHandler('get users', () => {
+    return {
+        request: {
+            method: 'GET',
+            path: '/users',
+            queryParams: {
+              id: 1
+            }
+          },
+          response: {
+            status: 200,
+            body: {
+              id: 1,
+              name: 'Jon'
+            }
+          }
+    }    
+  });
+
+  handler.addInteractionHandler('create users', () => {
+    return {
+        request: {
+            method: 'POST',
+            path: '/api/users',
+            body: {
+              name: 'praveen',
+              job: 'figuring'
+            }
+          },
+          response: {
+            status: 201
+          }
+    }    
+  });
+
+
+  module.exports = addUserExample =async () => mock.addInteraction('get users');
+  module.exports = addCreateUserExample =async () => mock.addInteraction('create users');

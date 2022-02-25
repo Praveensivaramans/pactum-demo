@@ -1,0 +1,21 @@
+{
+  "name": "pactum-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:pd:request-making": "mocha pactum-demo/request-making",
+    "start:pd:mock-server": "node pactum-demo/mock-server/mock.js",
+    "test:pd:cont:os": "mocha pactum-demo/tests",
+    "test:cucumber": "cucumber-js --publish"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mocha": "^9.0.1",
+    "pactum": "^3.1.3",
+    "pactum-flow-plugin": "0.1.3"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^7.3.2"
+  }
+}
